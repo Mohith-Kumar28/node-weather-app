@@ -4,6 +4,7 @@ const hbs=require('hbs')
 const geocode=require('./utils/geocode')
 const forecast=require('./utils/forecast')
 const app =express()
+const port=process.env.PORT||3000
 // const dir= path.join(__dirname,'../public')
 // const aboutdir= path.join(__dirname,'../public')
 const viewpath= path.join(__dirname,'../templates/views')
@@ -79,6 +80,6 @@ hbs.registerPartials(partialpath)
 //     res.send('hello helo')
 // })
 
-app.listen(3000,()=>{
-    console.log('started')
+app.listen(port,()=>{
+    console.log('started at port '+port)
 })
